@@ -1,29 +1,21 @@
-local _old_path="$PATH"
+HISTSIZE=100000
+SAVEHIST=100000
+setopt SHARE_HISTORY
+setopt EXTENDED_HISTORY
+
+export ARCHFLAGS="-arch x86_64"
+export MANPATH="/usr/local/man:$MANPATH"
+export CHROME_BIN="$HOME/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+export FIREFOX_BIN="$HOME/Applications/Firefox.app/Contents/MacOS/firefox-bin"
+export PGDATA=/usr/local/var/postgres
+export LC_CTYPE=en_US.UTF-8
+export LANGUAGE="en_US.UTF-8"
+export LANG="en_US.UTF-8"
+export LC_ALL="en_US.UTF-8"
+export EDITOR=vim
+export VISUAL=vim
+export GIT_EDITOR=vim
+export PYENV_ROOT="$HOME/.pyenv"
 
 # Local config
 [[ -f ~/.zshenv.local ]] && source ~/.zshenv.local
-
-if [[ $PATH != $_old_path ]]; then
-  # `colors` isn't initialized yet, so define a few manually
-  typeset -AHg fg fg_bold
-  if [ -t 2 ]; then
-    fg[red]=$'\e[31m'
-    fg_bold[white]=$'\e[1;37m'
-    reset_color=$'\e[m'
-  else
-    fg[red]=""
-    fg_bold[white]=""
-    reset_color=""
-  fi
-
-  cat <<MSG >&2
-${fg[red]}Warning:${reset_color} your \`~/.zshenv.local' configuration seems to edit PATH entries.
-Please move that configuration to \`.zshrc.local' like so:
-  ${fg_bold[white]}cat ~/.zshenv.local >> ~/.zshrc.local && rm ~/.zshenv.local${reset_color}
-
-(called from ${(%):-%N:%i})
-
-MSG
-fi
-
-unset _old_path
