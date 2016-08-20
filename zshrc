@@ -1,3 +1,4 @@
+# zmodload zsh/zprof
 source ~/antigen.zsh
 
 antigen use oh-my-zsh
@@ -7,9 +8,9 @@ antigen bundle git
 antigen bundle git-flow
 antigen bundle git-extras
 
-antigen bundle pyenv
+#antigen bundle pyenv
 antigen bundle rbenv
-antigen bundle nvm
+#antigen bundle nvm
 
 antigen bundle osx
 antigen bundle brew
@@ -38,3 +39,5 @@ antigen apply
 
 # Local config
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
+
+#zprof
