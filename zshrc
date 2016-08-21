@@ -9,8 +9,16 @@ antigen bundle git-flow
 antigen bundle git-extras
 
 #antigen bundle pyenv
-antigen bundle rbenv
+if command -v pyenv >/dev/null; then
+  eval "$(pyenv init - zsh)"
+  eval "$(pyenv virtualenv-init -)"
+fi
+#antigen bundle rbenv
+if command -v rbenv >/dev/null; then
+  eval "$(rbenv init - --no-rehash)"
+fi
 #antigen bundle nvm
+antigen bundle lukechilds/zsh-nvm
 
 antigen bundle osx
 antigen bundle brew
