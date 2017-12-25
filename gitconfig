@@ -1,7 +1,8 @@
 #[init]
 #  templatedir = ~/.git_template
 [push]
-  default = simple
+  default = current
+  followTags = true
 [color]
   ui = auto
 [alias]
@@ -25,3 +26,11 @@
   autosquash = true
 [include]
   path = ~/.gitconfig.local
+[url "git://github.com/"]
+	insteadOf = gh:
+[url "git@github.com:"]
+	insteadOf = gh:
+[url "https://github.com"]
+	insteadOf = git://github.com
+[tag]
+	sort = version:refname
