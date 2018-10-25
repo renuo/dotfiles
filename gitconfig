@@ -26,11 +26,8 @@
   autosquash = true
 [include]
   path = ~/.gitconfig.local
-[url "git://github.com/"]
-	insteadOf = gh:
-[url "git@github.com:"]
-	insteadOf = gh:
-[url "https://github.com"]
-	insteadOf = git://github.com
 [tag]
-	sort = version:refname
+  sort = version:refname
+[diff]
+  colorMoved = zebra
+

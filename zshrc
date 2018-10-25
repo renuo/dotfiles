@@ -42,10 +42,10 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 antigen theme robbyrussell
 antigen apply
 
-# aliases
-[[ -f ~/.aliases ]] && source ~/.aliases
-
 # Local config
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
+
+# aliases
+[[ -f ~/.aliases ]] && source ~/.aliases
 
 #zprof
